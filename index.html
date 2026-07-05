@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Nobija ❤️</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;font-family:system-ui;background:linear-gradient(135deg,#ff6b8a,#ffb3c7,#ffd6e7);background-size:300% 300%;animation:bg 12s ease infinite}
+@keyframes bg{50%{background-position:100% 100%}}
+#wrap{display:flex;align-items:center;justify-content:center;height:100%}
+.card{width:min(92vw,700px);background:rgba(255,255,255,.18);backdrop-filter:blur(14px);border-radius:24px;padding:28px;color:#fff;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+h1{margin:0;font-size:2.2em}.small{opacity:.9}
+button{margin-top:20px;padding:14px 28px;border:none;border-radius:30px;font-size:18px}
+#msg{white-space:pre-wrap;line-height:1.7;min-height:220px;margin-top:20px}
+.heart{position:fixed;bottom:-30px;font-size:20px;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+#final{display:none;font-size:1.4em}
+</style></head><body><div id=wrap><div class=card>
+<h1>For Nobija ❤️</h1><div class=small>From Izaz</div>
+<p>Our story began on <b>9 September 2025</b>.</p>
+<p id=timer></p>
+<button onclick=start()>Open My Heart 💌</button>
+<div id=msg></div><div id=final>🥺 Will you forgive me?<br><br>Whatever happened, I care about you, and I'm here to listen. ❤️</div>
+</div></div>
+<script>
+const s=new Date('2025-09-09T00:00:00');
+setInterval(()=>{let d=Date.now()-s;let days=Math.floor(d/86400000),h=Math.floor(d%86400000/36e5),m=Math.floor(d%36e5/6e4);
+timer.textContent=`${days} days, ${h} hours and ${m} minutes of our story.`},1000);
+const text=`Dear Nobija,
+
+I noticed you seem upset, and I don't know why.
+
+If I said or did anything that hurt you, I'm truly sorry. It was never my intention to make you feel bad.
+
+You are very important to me. Instead of guessing, I'd rather listen to you and understand how you feel.
+
+Thank you for every smile, every conversation, and every moment we've shared since 9 September 2025.
+
+Whenever you're ready, I'm here—with an open heart. ❤️
+
+— Izaz`;
+function start(){document.querySelector('button').remove();let i=0;let t=setInterval(()=>{msg.textContent=text.slice(0,++i);if(i>=text.length){clearInterval(t);setTimeout(()=>final.style.display='block',700)}},28)}
+setInterval(()=>{let e=document.createElement('div');e.className='heart';e.textContent=['❤️','💖','💕','💗'][Math.floor(Math.random()*4)];
+e.style.left=Math.random()*100+'vw';e.style.animationDuration=(4+Math.random()*4)+'s';e.style.fontSize=(16+Math.random()*22)+'px';document.body.appendChild(e);setTimeout(()=>e.remove(),8000)},180);
+</script></body></html>
